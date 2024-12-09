@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$red: #ea5353;
+$cyan: #45d3d3;
+$orange: #fcaf4a;
+$blue: #549ef2;
+$dark-blue: #4c4e61;
+$gray-blue: #a3a5ae;
+$light-gray: #fafafa;
+
+$weight200: 200;
+$weight400: 400;
+$weight600: 600;
+
+// *css reset*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 15px;
+  background-color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  main {
+    width: 90vw;
+    .sub-title {
+      color: $dark-blue;
+      font-weight: $weight200;
+      text-align: center;
+      width: 100%;
+    }
+    .main-title {
+      color: $dark-blue;
+      font-weight: $weight600;
+      text-align: center;
+      width: 100%;
+    }
+    .description {
+        width: 100%;
+      color: $dark-blue;
+      font-weight: $weight200;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      margin-top: 5vh;
+      gap: 2vw;
+      .card1,
+      .card2,
+      .card3,
+      .card4 {
+        background-color: white;
+        // width: 45vw;
+        height: max-content;
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 3vh 2vw;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        .icon {
+          margin-top: 10%;
+          align-self: flex-end;
+        }
+      }
+      .card-heading {
+        color: $dark-blue;
+        font-weight: $weight600;
+      }
+      .card-desc {
+        color: $gray-blue;
+        font-weight: $weight200;
+      }
+
+      .card1 {
+        flex-basis: calc(100% / 3);
+        align-self: center;
+        border-top: 4px solid $cyan;
+      }
+      .middle-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4vh;
+        flex-basis: 30vw;
+
+        .card2 {
+          width: 100%;
+          border-top: 4px solid $red;
+        }
+        .card3 {
+          width: 100%;
+          border-top: 4px solid $orange;
+        }
+      }
+      .card4 {
+        flex-basis: calc(100% / 3);
+        align-self: center;
+        border-top: 4px solid $blue;
+      }
+    }
+  }
+  footer {
+    .attribution {
+      color: $gray-blue;
+      a {
+        color: $dark-blue;
+        font-weight: $weight600;
+      }
+    }
+  }
+}
+
+@media(max-width:576px){
+    body{
+        main{
+            
+            .cards{
+                flex-direction: column;
+                .card1, .card2, .card3, .card4{
+                    width: 100%;
+                }
+            }
+        }
+        footer{
+            margin:  0 7vw;
+        }
+    }
+}
